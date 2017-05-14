@@ -1,0 +1,59 @@
+{
+  "name": "caaf",
+  "version": "1.0.0",
+  "description": "CLI tool for minification, purification and optimization of HTML, JS, CSS and image assets",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiaanduplessis/caaf.git"
+  },
+  "homepage": "https://github.com/tiaanduplessis/caaf",
+  "bugs": "https://github.com/tiaanduplessis/caaf/issues",
+  "author": {
+    "name": "Tiaan",
+    "email": "tiaanduplessis@hotmail.com",
+    "url": "tiaan.beer"
+  },
+  "bin": {
+    "caaf": "index.js"
+  },
+  "scripts": {
+    "start": "npm run dev",
+    "test": "npm run lint",
+    "lint": "standard --verbose",
+    "lint:fix": "standard --fix --verbose",
+    "precommit": "npm test"
+  },
+  "keywords": [
+    "minify",
+    "purify",
+    "optimize",
+    "uglify",
+    "html",
+    "css",
+    "js",
+    "png",
+    "jpeg",
+    "jpg",
+    "gif",
+    "svg",
+    "caaf"
+  ],
+  "dependencies": {
+    "filendir": "^1.0.0",
+    "html-minifier": "^3.4.4",
+    "imagemin": "^5.3.1",
+    "imagemin-gifsicle": "^5.1.0",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-pngquant": "^5.0.0",
+    "imagemin-svgo": "^5.2.1",
+    "node-dir": "^0.1.16",
+    "purify-css": "^1.1.9",
+    "uglify-js": "^3.0.4"
+  },
+  "devDependencies": {
+    "husky": "^0.13.3",
+    "standard": "^10.0.1"
+  }
+}
