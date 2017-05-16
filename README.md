@@ -1,3 +1,6 @@
+<div align="center">
+	<image width="30%" src="media/minimize.png" alt=""/>
+</div>
 <h1 align="center">caaf</h1>
 <div align="center">
   <strong>CLI tool for minification, purification and optimization of HTML, JS, CSS and image assets</strong>
@@ -70,6 +73,8 @@ This basic CLI tool recursively walks a given directory and:
 - Minifies JS using [uglify-js](https://github.com/mishoo/UglifyJS)
 - Minifies png, jpeg, jpg, gif & svg images using [imagemin](https://github.com/imagemin/imagemin)
 
+It is intended to be run as a post script on static assets.
+
 ## Install
 
 ```sh
@@ -80,10 +85,10 @@ $ yarn global add caaf
 
 ## Usage
 
-After install run `gaaf`.
+After install run `caaf`.
 
 ```sh
-$ gaaf
+$ caaf
 ```
 
 This will optimize all assets in the current directory.
@@ -91,13 +96,13 @@ This will optimize all assets in the current directory.
 You can also specify a input directory:
 
 ```sh
-$ gaaf inputDir
+$ caaf inputDir
 ```
 
 And output directory:
 
 ```sh
-$ gaaf inputDir outputDir
+$ caaf inputDir outputDir
 ```
 
 ## Contribute
@@ -109,3 +114,5 @@ Note: If editing the README, please conform to the [standard-readme](https://git
 ## License
 
 Licensed under the MIT License.
+
+<div>Icons made by <a href="http://www.flaticon.com/authors/madebyoliver" title="Madebyoliver">Madebyoliver</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
