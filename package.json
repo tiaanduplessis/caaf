@@ -1,6 +1,6 @@
 {
   "name": "caaf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CLI tool for minification, purification and optimization of HTML, JS, CSS and image assets",
   "license": "MIT",
   "main": "index.js",
