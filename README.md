@@ -67,6 +67,8 @@
 
 ## About
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tiaanduplessis/caaf.svg)](https://greenkeeper.io/)
+
 This basic CLI tool recursively walks a given directory and:
 - Minifies HTML using [html-minifier](https://github.com/kangax/html-minifier)
 - Minifies and removes unused CSS using [purify-css](https://github.com/purifycss/purifycss)
