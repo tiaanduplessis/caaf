@@ -42,14 +42,14 @@
   ],
   "dependencies": {
     "filendir": "^1.0.0",
-    "html-minifier": "^3.4.4",
+    "html-minifier": "^3.5.0",
     "imagemin": "^5.3.1",
     "imagemin-gifsicle": "^5.1.0",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngquant": "^5.0.0",
     "imagemin-svgo": "^5.2.1",
     "node-dir": "^0.1.16",
-    "purify-css": "^1.1.9",
+    "purify-css": "^1.2.1",
     "uglify-js": "^3.0.4"
   },
   "devDependencies": {
