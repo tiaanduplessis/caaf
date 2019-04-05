@@ -47,7 +47,7 @@
     "imagemin-gifsicle": "^5.1.0",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-pngquant": "^5.0.0",
-    "imagemin-svgo": "^5.2.1",
+    "imagemin-svgo": "^5.2.3",
     "node-dir": "^0.1.16",
     "purify-css": "^1.1.9",
     "uglify-js": "^3.0.4"
