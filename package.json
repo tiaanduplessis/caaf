@@ -50,7 +50,7 @@
     "imagemin-svgo": "^5.2.1",
     "node-dir": "^0.1.16",
     "purify-css": "^1.1.9",
-    "uglify-js": "^3.0.4"
+    "uglify-js": "^3.9.3"
   },
   "devDependencies": {
     "husky": "^0.13.3",
