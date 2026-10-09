@@ -36,7 +36,11 @@ dir.readFiles(input, (error, content, filename, next) => {
   }
 
   if (ext === '.js') {
-    newContent = js.minify(content).code
+    const result = js.minify(content)
+    if (result.error) {
+      throw result.error
+    }
+    newContent = result.code
   }
 
   if (ext === '.css') {

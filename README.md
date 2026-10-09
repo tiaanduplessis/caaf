@@ -105,11 +105,19 @@ And output directory:
 $ caaf inputDir outputDir
 ```
 
+If JavaScript cannot be minified, caaf stops with the minifier's original error
+before writing that file. Files processed earlier in the run may already have
+been optimized; this does not roll back earlier output.
+
 ## Contribute
 
 Contributions are welcome. Please open up an issue or create PR if you would like to help out.
 
 Note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
+
+`npm run test:js-errors` checks JavaScript error handling on Node 16 or newer with
+the installed minifier and owned temporary files. Directory walking and the other asset
+providers are guarded; the tests do not run the legacy lint or image tools.
 
 ## License
 
