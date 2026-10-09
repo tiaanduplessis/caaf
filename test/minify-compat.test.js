@@ -48,6 +48,32 @@ const fixtures = [
   ['external anonymous function arity', 'function create() { return function (one, two, three) { return one; }; } var outputFn = create();', '[outputFn.length, outputFn(4)]'],
   ['shebang script', '#!/usr/bin/env node\nvar result = 8;']
 ]
+// Invoke the compiled public function with accessors outside its minified source.
+// Their changing values, repeated reads and thrown errors remain observable.
+const subscribeSource = 'function subscribe(subs, name, handler) {' +
+  'subs[name] = subs[name] ? subs[name].concat(handler) : (subs[name] = []).concat(handler); }'
+const getterCases = [
+  ['stable conditional getter', 'return [];'],
+  ['changing conditional getter', 'return reads === 1 ? ["first"] : ["second"];'],
+  ['null second conditional getter', 'return reads === 1 ? [] : null;'],
+  ['throwing second conditional getter', 'if (reads === 2) throw originalError; return [];'],
+  ['falsy conditional getter', 'return false;']
+]
+getterCases.forEach(function (fixture) {
+  const observe = [
+    '(function () {',
+    'var reads = 0; var assigned = []; var error = null;',
+    'var originalError = new Error("second read"); var subs = {};',
+    'Object.defineProperty(subs, "event", {',
+    'get: function () { reads++; ' + fixture[1] + ' },',
+    'set: function (value) { assigned.push(value); } });',
+    'try { subscribe(subs, "event", ["handler"]); }',
+    'catch (caught) { error = [caught.name, caught.message, caught === originalError]; }',
+    'return [reads, assigned, error]; })()'
+  ].join('\n')
+  fixtures.push([fixture[0], subscribeSource, observe])
+})
+
 function evaluate (code, expression) {
   const context = vm.createContext(Object.create(null), {
     codeGeneration: { strings: false, wasm: false }
