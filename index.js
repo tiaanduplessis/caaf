@@ -39,7 +39,7 @@ dir.readFiles(input, (error, content, filename, next) => {
     const result = js.minify(content, {
       module: false,
       toplevel: false,
-      compress: { keep_fargs: true, hoist_funs: true }
+      compress: { keep_fargs: true, hoist_funs: true, conditionals: false }
     })
     if (result.error) {
       throw result.error

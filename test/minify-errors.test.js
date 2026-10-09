@@ -47,7 +47,7 @@ function expectedCode (content) {
   const result = uglify.minify(content, {
     module: false,
     toplevel: false,
-    compress: { keep_fargs: true, hoist_funs: true }
+    compress: { keep_fargs: true, hoist_funs: true, conditionals: false }
   })
   assert.ifError(result.error)
   assert.strictEqual(typeof result.code, 'string')

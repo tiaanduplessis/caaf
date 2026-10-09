@@ -108,7 +108,8 @@ $ caaf inputDir outputDir
 JavaScript files are minified as classic scripts, preserving top-level declarations
 and function argument counts. The minifier is UglifyJS 3.19.3 or newer within version
 3; generated formatting and compression can change between versions. Caaf does
-not assume ES module semantics.
+not assume ES module semantics. Conditional-expression rewriting is disabled to
+retain repeated property-getter reads and their exceptions.
 
 If JavaScript cannot be minified, caaf stops with the minifier's original error
 before writing that file. Files processed earlier in the run may already have
