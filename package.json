@@ -21,6 +21,7 @@
   "scripts": {
     "start": "npm run dev",
     "test": "npm run lint",
+    "test:js-errors": "node test/minify-errors.test.js",
     "lint": "standard --verbose",
     "lint:fix": "standard --fix --verbose",
     "precommit": "npm test"
