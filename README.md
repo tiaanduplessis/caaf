@@ -105,6 +105,11 @@ And output directory:
 $ caaf inputDir outputDir
 ```
 
+JavaScript files are minified as classic scripts, preserving top-level declarations
+and function argument counts. The minifier is UglifyJS 3.19.3 or newer within version
+3; generated formatting and compression can change between versions. Caaf does
+not assume ES module semantics.
+
 If JavaScript cannot be minified, caaf stops with the minifier's original error
 before writing that file. Files processed earlier in the run may already have
 been optimized; this does not roll back earlier output.
@@ -118,6 +123,11 @@ Note: If editing the README, please conform to the [standard-readme](https://git
 `npm run test:js-errors` checks JavaScript error handling on Node 16 or newer with
 the installed minifier and owned temporary files. Directory walking and the other asset
 providers are guarded; the tests do not run the legacy lint or image tools.
+
+`npm run test:js-compat` also checks the written JavaScript output against reviewed
+script fixtures, including strict/sloppy mode, function arity, const scope and side
+effects. Both commands accept `-- --minifier-root /path/to/isolated-install` to use
+an independently installed minifier without loading the other asset providers.
 
 ## License
 
